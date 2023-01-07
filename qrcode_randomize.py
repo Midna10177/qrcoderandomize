@@ -16,7 +16,8 @@ else:
 #program will only run on one image despite it looking like the contrary
 
 images = [ Image.open(x) for x in imagefiles ]
-
+for i in range(len(images)):
+ images[i] = images[i].convert('RGB')
 
 CHANGE_WHITE_PIXELS = True
 CHANGE_BLACK_PIXELS = True
@@ -64,8 +65,8 @@ for i in IMGCOLORPROFILES: print(i,'\n')
 
 
 
-#after creating our color profile, we can go through, and actually create our new image by randomly changing all the black pixels to values from our array labeled black, and the same for white pixels
-newimg = Image.new( images[0].mode, newimgsize )
+#after creating our color profile, we can go through, and actually create our new image by randomly changing all the black pixels to values from our array labeled black
+newimg = Image.new( "RGB", newimgsize )
 newdata = newimg.load()
 
 data=images[0].load()
