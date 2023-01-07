@@ -64,7 +64,7 @@ for i in IMGCOLORPROFILES: print(i,'\n')
 
 
 
-#after creating our color profile, we can go through, and actually create our new image by randomly changing all the black pixels to values from our array labeled black
+#after creating our color profile, we can go through, and actually create our new image by randomly changing all the black pixels to values from our array labeled black, and the same for white pixels
 newimg = Image.new( images[0].mode, newimgsize )
 newdata = newimg.load()
 
